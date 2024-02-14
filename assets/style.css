@@ -7,6 +7,16 @@ body {
 header {
 
     font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 20%;
+    
+}
+
+header #timer {
+
+float:right;
+position: relative;
+bottom: 0%;
+
 }
 
 
