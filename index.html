@@ -17,13 +17,13 @@
 
     </head>
 
-    <header>
+    <div id="header">
     
-        <h5>View Highscores</h5>
+        <div id="Highscores">View Highscores</div>
 
-        <h5 id="timer">Time:</h5>
+        <div id="timer">Time:</div>
 
-    </header>
+    </div>
 
     <body>
 
@@ -33,77 +33,97 @@
 
             <p>Try to answer the following code-related questions within the time<br>limit. Keep in mind that incorrect answers will penalize your scoretime</br> by ten seconds</p>
 
-            <p>Start Quiz</p>
+            <button type="button">Start Quiz</button>
 
         </section>
 
-        <section class="Question-1">
+        <section class="Questions">
+
+        <section class="options-displayed-in-columns">
 
             <h3> Q1: Commonly used data types DO NOT <br>Include:</br></h3>
 
-            <p id="answer-option">1. strings</p>
+            <p class="answer-option" id="option-1">1. strings</p>
 
-            <p id="answer-option">2. booleans</p>
+            <p class="answer-option" id="option-2">2. booleans</p>
 
-            <p id="answer-option">3. alerts</p>
+            <p class="answer-option" id="option-3">3. alerts</p>
 
-            <p id="answer-option">4. numbers</p>
-
-        </section>
-
-        <section class="Question-2">
-
-            <h3>The condition in an if / else statement is <br> enclosed within</br></h3>
-
-            <p id="answer-option">1. quotes</p>
-
-            <p id="answer-option">2. curly brackets</p>
-
-            <p id="answer-option">3. parentheses</p>
-
-            <p id="answer-option">4. square brackets</p>
+            <p class="answer-option" id="option-4">4. numbers</p>
 
         </section>
 
-        <section class="Question-3">
+        </section>
 
-            <h3>Arrays in JavaScript can be used to store</h3>
+        <section class="Questions">
 
-            <p id="answer-option">1. numbers and strings</p>
+            <h3> Q2: The condition in an if / else statement is <br> enclosed within</br></h3>
 
-            <p id="answer-option">2. other arrays</p>
+        <section class="options-displayed-in-columns">
 
-            <p id="answer-option">3. booleans</p>
+            <p class="answer-option" id="option-5">1. quotes</p>
 
-            <p id="answer-option">4. all of the above</p>
+            <p class="answer-option" id="option-6">2. curly brackets</p>
+
+            <p class="answer-option" id="option-7">3. parentheses</p>
+
+            <p class="answer-option" id="option-8">4. square brackets</p>
 
         </section>
 
-        <section class="Question-4">
+        </section>
 
-            <h3>String values must be enclosed within<br>when being assigned to variables.</br></h3>
+        <section class="Questions">
 
-            <p id="answer-option">1. commas</p>
+            <h3> Q3: Arrays in JavaScript can be used to store</h3>
 
-            <p id="answer-option">2. curly brackets</p>
+        <section class="options-displayed-in-columns">
 
-            <p id="answer-option">3. quotes</p>
+            <p class="answer-option" id="option-9">1. numbers and strings</p>
 
-            <p id="answer-option">4. parenthesis</p>
+            <p class="answer-option" id="option-10">2. other arrays</p>
+
+            <p class="answer-option" id="option-11">3. booleans</p>
+
+            <p class="answer-option" id="option-12">4. all of the above</p>
 
         </section>
 
-        <section class="Question-5">
+        </section>
 
-            <h3>A very useful tool used during development <br>and debugging for printing content to the </br> debugger is:</h3>
+        <section class="Questions">
 
-            <p id="answer-option">1. JavaScript</p>
+            <h3> Q4: String values must be enclosed within<br>when being assigned to variables.</br></h3>
 
-            <p id="answer-option">2. terminal/bash</p>
+        <section class="options-displayed-in-columns">
 
-            <p id="answer-option">3. for loop</p>
+            <p class="answer-option" id="option-13">1. commas</p>
 
-            <p id="answer-option">4. console.log</p>
+            <p class="answer-option" id="option-14">2. curly brackets</p>
+
+            <p class="answer-option" id="option-15">3. quotes</p>
+
+            <p class="answer-option" id="option-16">4. parenthesis</p>
+
+        </section>
+
+        </section>
+
+        <section class="Questions">
+
+            <h3>Q5: A very useful tool used during development <br>and debugging for printing content to the </br> debugger is:</h3>
+
+        <section class="options-displayed-in-columns">
+
+            <p class="answer-option" id="option-17">1. JavaScript</p>
+
+            <p class="answer-option" id="option-18">2. terminal/bash</p>
+
+            <p class="answer-option" id="option-19">3. for loop</p>
+
+            <p class="answer-option" id="option-20">4. console.log</p>
+
+        </section>
 
         </section>
 
@@ -113,9 +133,11 @@
 
             <p>Your final score is</p>
 
-            <p>Enter initials:</p>
+            <label for="Enter-Initials">Enter initials:</label><br>
 
-            <p>Submit</p>
+            <input type="text" id="Enter-Initials" name="Enter-Initials"></section><br>
+
+            <button type="button">Submit</button>
 
         </section>
 
@@ -123,9 +145,9 @@
 
             <h2>Highscores</h2>
 
-            <p>Go back</p>
+            <button type="button">Go back</button>
 
-            <p>Clear Highscores</p>
+            <button type="button">Clear Highscores</button>
 
         </section>
 

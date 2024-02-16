@@ -1,80 +1,136 @@
 body {
 
-    
+    display: flex;   
+    flex-wrap: wrap;
+    flex-direction: column;
 
 }
 
-header {
+#header {
 
+    display: flex;
+    justify-content: space-between;
     font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 20%;
-    
+    margin-bottom: 0%;
+    background-color: blueviolet;
+    color: white;
+    width: 100%;
 }
+ /*
+#timer {                  /*
 
-header #timer {
-
-float:right;
-position: relative;
-bottom: 0%;
-
+    position: relative;
+    left: 91%;
+    bottom: 0%;
 }
-
+*/
 
 .Start-Quiz {
 
-
-
-}
-
-
-.Question-1 {
-
-
-
-}
-
-
-
-.Question-2 {
-
-
+    position: relative;
+    left: 0%;
+    padding: 100px;
+    border: 5px solid black;
+    margin: 50px;
+    display: inline-block;
+    text-align: center;
 
 }
 
+.Start-Quiz button {
 
-.Question-3 {
-
-
-
+    background-color: blueviolet;
+    color: white;
 }
 
+.Questions {
 
-.Question-4 {
-
-
-
+    position: relative;
+    left: 0%;
+    padding: 100px;
+    border: 5px solid black;
+    margin: 50px;
+    display: inline-block;
+    text-align: center;
 }
 
 
 
-.Question-5 {
+.options-displayed-in-columns {
 
-
-
-
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+    
 }
 
 
+.Submit-Quiz {
 
-.SubmitQuiz {
+    position: relative;
+    left: 0%;
+    padding: 100px;
+    border: 5px solid black;
+    margin: 50px;
+    display: inline-block;
+    text-align: center;
+}
 
 
+.Submit-Quiz button {
+
+    width: 10px;
 
 }
 
 
 .Initials-score {
 
-
+    position: relative;
+    left: 0%;
+    padding: 100px;
+    border: 5px solid black;
+    margin: 50px;
+    display: inline-block;
+    text-align: center;
 
 }
+
+#Enter-Initials {
+
+    border-radius: 25px;
+    position: relative;
+    left: 0%;
+    padding: 100px;
+    border: 5px solid black;
+    margin: 50px;
+    display: inline-block;
+}
+
+
+
+.answer-option {
+
+    border: 5px solid purple;
+    display: inline;
+    color: aliceblue;
+    background-color: blueviolet;
+    border-radius: 25px;
+}
+
+
+/* pseudoclasses and pseudoelements section*/
+
+.Start-Quiz button:hover {
+
+    text-decoration: underline;
+
+}
+
+.options-displayed-in-columns {
+
+    
+}
+
+
+/* media query section */
