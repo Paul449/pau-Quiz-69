@@ -57,6 +57,54 @@ body {
     
 }
 
+.answer-option1 {
+
+    border: 5px solid purple;
+    display: inline;
+    color: aliceblue;
+    background-color: blueviolet;
+    border-radius: 25px;
+}
+
+.answer-option2 {
+
+    border: 5px solid purple;
+    display: inline;
+    color: aliceblue;
+    background-color: blueviolet;
+    border-radius: 25px;
+}
+
+.answer-option3 {
+
+    border: 5px solid purple;
+    display: inline;
+    color: aliceblue;
+    background-color: blueviolet;
+    border-radius: 25px;
+}
+
+.answer-option4 {
+
+    border: 5px solid purple;
+    display: inline;
+    color: aliceblue;
+    background-color: blueviolet;
+    border-radius: 25px;
+}
+
+.answer-option5 {
+
+    border: 5px solid purple;
+    display: inline;
+    color: aliceblue;
+    background-color: blueviolet;
+    border-radius: 25px;
+}
+
+
+
+
 
 .Submit-Quiz {
 
@@ -98,17 +146,6 @@ body {
     border: 5px solid black;
     margin: 50px;
     display: inline-block;
-}
-
-
-
-.answer-option {
-
-    border: 5px solid purple;
-    display: inline;
-    color: aliceblue;
-    background-color: blueviolet;
-    border-radius: 25px;
 }
 
 

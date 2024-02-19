@@ -13,7 +13,7 @@ N/A
 
 # Usage
 
-
+This is a web application, which only runs in any browser and only usable for LMS software private school websites designed only for students to being able to take it. This is not a conventional web application for anyone being able to access it.
 
 # Screenshot
 

@@ -1,29 +1,119 @@
-// This document will contain the logic and functionality for this quiz and students will be able to take it.
-
-                                                                    // global variables
-
-// divheader elements
-
-var getElementbyTimer = document.getElementById('timer'); // selecting HTML element from divheader called "timer" to convert it to a functional timer
-
-var getElementbyHighScores = document.getElementById('Highscores'); // selecting HTML element from divheader called "Highscores" to see the highest score after finishing quiz
 
 
-// Question options
+                                                                        /*object storing questions from the quiz*/ 
+
+var Questions = {
+
+Q1: {
+    prompt:"Commonly used data types DO NOT Include:",
+    options: ["strings","booleans", "alerts", "numbers"],
+    answer: "alerts"
+},
+
+Q2: {
+
+    prompt:"The condition in an if / else statement is enclosed within",
+    options: ["quotes", "curlybrackets", "parenthesis", "squarebrackets"],
+    answer: "parenthesis"
+
+},
+
+Q3: {
+
+    prompt:"Arrays in JavaScript can be used to store:",
+    options: ["numbers and strings","other arrays","booleans","all of the above"],
+    answer: "all of the above"
+
+},
+
+Q4: {
+
+    prompt:"Q4: String values must be enclosed within when being assigned to variables.",
+    options: ["commas","curly brackets","quotes","parenthesis"],
+    answer: "quotes"
+
+},
+
+Q5: {
+
+    prompt:"Q5: A very useful tool used during development and debugging for printing content to the debugger is:",
+    options: ["JavaScript","terminal/bash","for loop","console.log"],
+    answer: "console.log"
+
+},
+
+}
+
+
+                                                                                    /*web API's variables*/ 
+
+var QuizQuestions = document.querySelector('#Questions'); // selecting question section from html
+
+var myTimer = document.querySelector("#timer");
+
+var choicesEl = document.querySelector("#answer-options");
+
+var submit = document.querySelector( "#Submit-button");
+
+var start = document.querySelector("#Start-Quiz");
+
+var initials = document.querySelector("#Enter-Initials");
+
+var reStartQuiz = document.querySelector("#restartQuiz");
+
+                                                                                    /*quiz state*/ 
+
+var currentQuestionIndex = 0; //position of questions object
+
+var timePerQuestion = Questions.length * 15; // duration time per question
+
+var timerInterval; // variable useful for setting our timer between questions
 
 
 
+                                                                                    /*start Quiz*/ 
 
-//button elements
+function StartingQuiz() {
 
-var getElementbybuttons = document.getElementsByTagName('button');
+    timerInterval = setInterval(TimeCounter, 1000);
 
-var getElementbyStartQuiz = getElementbybuttons[0];
+    myTimer.textContent = timePerQuestion; // returning text content of element
 
-var getElementbySubmitQuiz = getElementbybuttons[1];
+    var displayingScreen = document.getElementById("quiz-screen");
 
-var getElementbyGoBack = getElementbybuttons[2];
+    landingScreenEl.setAttribute("class","hide"); //
 
-var getElementbyClearHighScores = getElementbybuttons[3];
+    QuizQuestions.removeAttribute("class");
 
-//functions
+    oneByOneQuestionQuestion();
+}
+
+
+function oneByOneQuestion() {
+
+    let currentQuestion = Questions[currentQuestionIndex]; //indicating position of the Questions object
+
+}
+
+function clickingQuestions() {
+    
+  
+}
+
+function EndingQuiz() {
+   
+    
+}
+
+function TimeCounter() { // declaring a function to make the quiz timer working properly
+
+
+
+}
+
+function storingHighestScore() {
+
+
+
+}
+
