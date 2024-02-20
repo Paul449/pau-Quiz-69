@@ -1,166 +1,127 @@
-body {
+* {
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+ 
+.body{
 
-    display: flex;   
-    flex-wrap: wrap;
-    flex-direction: column;
-
+    background-color: aqua;
 }
 
-#header {
-
-    display: flex;
-    justify-content: space-between;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 0%;
-    background-color: blueviolet;
-    color: white;
-    width: 100%;
+.coding-quiz,
+.scores {
+    margin: 50px auto 0 auto;
+    max-width: 400px;
+}
+ 
+#top {
+    color: purple;
+}
+ 
+.quiz-box {
+    border: 5px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 580px;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
 }
  
 
-.Start-Quiz {
-
-    position: relative;
-    left: 0%;
-    padding: 100px;
-    border: 5px solid black;
-    margin: 50px;
-    display: inline-block;
-    text-align: center;
-
+p {
+    margin: 15px 15px;
 }
-
-.Start-Quiz button {
-
-    background-color: blueviolet;
-    color: white;
-}
-
-.Questions {
-
-    position: relative;
-    left: 0%;
-    padding: 100px;
-    border: 5px solid black;
-    margin: 50px;
-    display: inline-block;
+ 
+.displaying {
     text-align: center;
 }
-
-
-
-.options-displayed-in-columns {
-
-   display: flex;
-   flex-wrap: wrap;
-   flex-direction: column;
+ 
+.divheader {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color:#483D8B;
     
 }
-
-.answer-option1 {
-
-    border: 5px solid purple;
-    display: inline;
-    color: aliceblue;
-    background-color: blueviolet;
-    border-radius: 25px;
+ 
+.timer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
-
-.answer-option2 {
-
-    border: 5px solid purple;
-    display: inline;
-    color: aliceblue;
-    background-color: blueviolet;
-    border-radius: 25px;
-}
-
-.answer-option3 {
-
-    border: 5px solid purple;
-    display: inline;
-    color: aliceblue;
-    background-color: blueviolet;
-    border-radius: 25px;
-}
-
-.answer-option4 {
-
-    border: 5px solid purple;
-    display: inline;
-    color: aliceblue;
-    background-color: blueviolet;
-    border-radius: 25px;
-}
-
-.answer-option5 {
-
-    border: 5px solid purple;
-    display: inline;
-    color: aliceblue;
-    background-color: blueviolet;
-    border-radius: 25px;
-}
-
-
-
-
-
-.Submit-Quiz {
-
-    position: relative;
-    left: 0%;
-    padding: 100px;
-    border: 5px solid black;
-    margin: 50px;
+ 
+button {
     display: inline-block;
-    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+    color: #fff;
+    background-color: purple;
+    border-radius: 5px;
+    border: 0;
+    padding: 20px;
+}
+ 
+button:hover {
+    background-color: blue;
+}
+ 
+.answer-options button {
+    display: block;
+}
+ 
+input[type="text"] {
+    font-size: 100%;
+}
+ 
+.hide {
+
+    display: none;
+}
+ 
+.feedback {
+    font-style: bold;
+    font-size: 120%;
+    margin-top: 20px;
+    padding-top: 15px;
+    color: #fff;
+    border-top: 2px solid #4B0082;
+}
+ 
+ol {
+    padding-left: 15px;
+    max-height: 600px;
+    overflow: auto;
+}
+ 
+li {
+    padding: 5px;
+    list-style: decimal inside none;
 }
 
-
-.Submit-Quiz button {
-
-    width: 10px;
-
-}
-
-
-.Initials-score {
-
-    position: relative;
-    left: 0%;
-    padding: 100px;
-    border: 5px solid black;
-    margin: 50px;
-    display: inline-block;
-    text-align: center;
-
-}
-
-#Enter-Initials {
-
-    border-radius: 25px;
-    position: relative;
-    left: 0%;
-    padding: 100px;
-    border: 5px solid black;
-    margin: 50px;
-    display: inline-block;
-}
-
-
-/* pseudoclasses and pseudoelements section*/
-
-.Start-Quiz button:hover {
+#start-button:hover {
 
     text-decoration: underline;
 
 }
-
-.options-displayed-in-columns {
-
-    
+ 
+li:nth-child(odd) {
+    background-color: #dfdae7;
 }
-
-
-/* media query section */
+ 
+@media screen and (max-width: 768px) {
+    .quiz-box {
+        width: 80%;
+    }
+}
+ 
+@media screen and (max-width: 575px) {
+    .containerNew {
+        width: 90%;
+    }
+ 
+    .quiz,
+    .scores {
+        max-width: 90%;
+    }
+}

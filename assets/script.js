@@ -4,13 +4,13 @@
 
 var Questions = {
 
-Q1: {
+Q1: {                                                                          // Question 1 with the answer options stored
     prompt:"Commonly used data types DO NOT Include:",
     options: ["strings","booleans", "alerts", "numbers"],
     answer: "alerts"
 },
 
-Q2: {
+Q2: {                                                                          // Question 2 with the answer options stored
 
     prompt:"The condition in an if / else statement is enclosed within",
     options: ["quotes", "curlybrackets", "parenthesis", "squarebrackets"],
@@ -18,7 +18,7 @@ Q2: {
 
 },
 
-Q3: {
+Q3: {                                                                          // Question 3 with the answer options stored
 
     prompt:"Arrays in JavaScript can be used to store:",
     options: ["numbers and strings","other arrays","booleans","all of the above"],
@@ -26,7 +26,7 @@ Q3: {
 
 },
 
-Q4: {
+Q4: {                                                                          // Question 4 with the answer options stored
 
     prompt:"Q4: String values must be enclosed within when being assigned to variables.",
     options: ["commas","curly brackets","quotes","parenthesis"],
@@ -34,7 +34,7 @@ Q4: {
 
 },
 
-Q5: {
+Q5: {                                                                          // Question 5 with the answer options stored
 
     prompt:"Q5: A very useful tool used during development and debugging for printing content to the debugger is:",
     options: ["JavaScript","terminal/bash","for loop","console.log"],
@@ -44,76 +44,155 @@ Q5: {
 
 }
 
-
-                                                                                    /*web API's variables*/ 
-
-var QuizQuestions = document.querySelector('#Questions'); // selecting question section from html
-
-var myTimer = document.querySelector("#timer");
-
-var choicesEl = document.querySelector("#answer-options");
-
-var submit = document.querySelector( "#Submit-button");
-
-var start = document.querySelector("#Start-Quiz");
-
-var initials = document.querySelector("#Enter-Initials");
-
-var reStartQuiz = document.querySelector("#restartQuiz");
-
-                                                                                    /*quiz state*/ 
-
-var currentQuestionIndex = 0; //position of questions object
-
-var timePerQuestion = Questions.length * 15; // duration time per question
-
-var timerInterval; // variable useful for setting our timer between questions
+                                                                                /*web API's variables from HTML elements*/ 
 
 
+var QuizQuestions = document.querySelector("#questions"); //targeting questions section from HTML document
 
-                                                                                    /*start Quiz*/ 
+var mytimer = document.querySelector("#counter"); // targeting counter from HTML
 
-function StartingQuiz() {
+var possibleAnswers = document.querySelector("#answer-options");
 
-    timerInterval = setInterval(TimeCounter, 1000);
+var submit = document.querySelector("#submit");
 
-    myTimer.textContent = timePerQuestion; // returning text content of element
+var startQuiz = document.querySelector("#start-button");
 
-    var displayingScreen = document.getElementById("quiz-screen");
+var student = document.querySelector("#student-initials");
 
-    landingScreenEl.setAttribute("class","hide"); //
+var feedbackMessage = document.querySelector("#feedback");
+
+var reStartBtn = document.querySelector("#restart");
+
+var currentQuestionIndex = 0; // index position of Questions object for futher access
+
+var timePerQuestions = Questions.length * 15;
+
+var timerIntervalQuiz;
+
+
+/*Function 1: starting quiz */
+
+function quizStart() {
+
+    timerIntervalQuiz = setInterval(timerCounter,1000);
+
+    mytimer.textContent = timePerQuestions;
+
+    var DisplayingScreen = document.getElementById("quiz-screen"); 
+
+    DisplayingScreen.setAttribute( "class","hide"); // adding a class atttribute with a value of hide
 
     QuizQuestions.removeAttribute("class");
 
-    oneByOneQuestionQuestion();
+    promptQuestion(); // calling promptQuestion function to display questions
+}
+
+/*function 2: display questions */
+
+function promptQuestion() {
+
+    var currentQuestion = questions[currentQuestionIndex]; // targeting index position from questions in the question object
+
+    var promptingQuestions = document.getElementById("questions");
+
+    promptingQuestions.textContent = currentQuestion.prompt;
+
+    possibleAnswers.innerHTML = "";
+
+    currentQuestion.options.forEach(function (selection, i) {
+
+            var selectAnswerBtn = document.createElement("button");
+
+            choiceBtn.setAttribute("value", selection);
+
+            selectAnswerBtn.textContent = i + 1 + ". " + selection;
+
+            selectAnswerBtn.onclick = questionClick;
+
+            possibleAnswers.appendChild(selectAnswerBtn);
+        }
+    );
 }
 
 
-function oneByOneQuestion() {
+/* function 3: click answers */
 
-    let currentQuestion = Questions[currentQuestionIndex]; //indicating position of the Questions object
+function clickingAnswer() {
 
+    if (this.value !== Questions[currentQuestionIndex].answer) {
+
+        timePerQuestions -= 10;
+
+        if (timePerQuestions < 0) {
+
+            timePerQuestions = 0;
+        }
+
+        mytimer.textContent = timePerQuestions;
+
+        feedbackMessage.textContent = `Incorrect! The correct answer was ${Questions[currentQuestionIndex].answer}.`; //
+
+        feedbackMessage.style.color = "red"; // displaying incorrect answers in red using css properties in the DOM manipulated by Javascript
+
+    } else {
+
+        feedbackMessage.textContent = "Your answer is Correct!"; // displaying feedback saying correct
+
+        feedbackMessage.style.color = "green"; // displaying correct answers in red using css properties in the DOM manipulated by Javascript
+    }
+
+    feedbackMessage.setAttribute("class","feedback");
+
+    setTimeout(function () {
+        feedbackMessage.setAttribute("class","feedback hide");}, 2000);
+
+    currentQuestionIndex++;
+
+    if ( currentQuestionIndex === Questions.length) {
+
+        endingQuiz();
+
+    } else {
+
+        promptQuestion();
+    }
 }
 
-function clickingQuestions() {
-    
-  
+
+/* function 4: endingQuiz */
+
+function endingQuiz() {
+
+    clearInterval(timerIntervalQuiz);
+
+    var endScreenEl = document.getElementById( "quiz-end");
+
+    endScreenEl.removeAttribute("class");
+
+    var finalScoreEl = document.getElementById("score-final");
+
+    finalScoreEl.textContent = timePerQuestions;
+
+    questionsEl.setAttribute( "class","hide");
+}
+ 
+
+
+
+/*function 5: QuizCounter */
+
+function timerCounter() { // function
+
+    timePerQuestions--; // decreasing time from counter
+
+    mytimer.textContent = timePerQuestions; //
+
+    if (time <= 0) {   //
+
+        endingQuiz();
+    }
 }
 
-function EndingQuiz() {
-   
-    
-}
 
-function TimeCounter() { // declaring a function to make the quiz timer working properly
-
-
-
-}
-
-function storingHighestScore() {
-
-
-
-}
+/*function 6: storing highscores from quiz */
 
