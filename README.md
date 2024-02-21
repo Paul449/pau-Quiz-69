@@ -23,9 +23,9 @@ This is a web application, which only runs in any browser and only usable for LM
 
 here are the links of the deployed application and repository:
 
-[link webpage](https://paul449.github.io/pau-Quiz-69/)
+(https://paul449.github.io/pau-Quiz-69/)
 
-[link repo:](https://github.com/Paul449/pau-Quiz-69)
+(https://github.com/Paul449/pau-Quiz-69)
 
 
 # Credits
