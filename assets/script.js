@@ -1,6 +1,4 @@
-
-
-                                                                        /*object storing questions from the quiz*/ 
+/*storing questions from the quiz*/ 
 
 var Questions = [
 
@@ -65,7 +63,7 @@ var reStartBtn = document.querySelector("#go-back");
 
 var currentQuestionIndex = 0; // index position of Questions object for futher access
 
-var timePerQuestions = Questions.length;
+var timePerQuestions = Questions.length * 15;
 
 var timerIntervalQuiz;
 
@@ -91,17 +89,17 @@ function quizStart() {
 
 function promptQuestion() {
 
-    var currentQuestion = Questions[currentQuestionIndex].prompt; // targeting index position from questions in the question object
+    var currentQuestion = Questions[currentQuestionIndex]; // targeting index position from questions in the question object
 
     var CurrentSelection
 
-    var promptingQuestions = document.getElementById("questions");
+    var promptingQuestions = document.getElementById("questions-prompt");
 
     promptingQuestions.textContent = currentQuestion.prompt;
 
     possibleAnswers.innerHTML = "";
 
-    currentQuestion.forEach(function (selection, i) {
+    currentQuestion.options.forEach(function (selection, i) {
 
             var selectAnswerBtn = document.createElement("button");
 
