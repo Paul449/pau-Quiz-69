@@ -17,11 +17,15 @@ This is a web application, which only runs in any browser and only usable for LM
 
 # Screenshot
 
-
+![screenshot](assets/quiz%20demo%20scr.png)
 
 # Links
 
 here are the links of the deployed application and repository:
+
+[link webpage](https://paul449.github.io/pau-Quiz-69/)
+
+[link repo:](https://github.com/Paul449/pau-Quiz-69)
 
 
 # Credits
@@ -30,4 +34,4 @@ N/A
 
 # License
 
-MIT License link:
+[MIT License link:](https://github.com/Paul449/pau-Quiz-69/blob/main/LICENSE)
