@@ -2,15 +2,15 @@
 
                                                                         /*object storing questions from the quiz*/ 
 
-var Questions = {
+var Questions = [
 
-Q1: {                                                                          // Question 1 with the answer options stored
-    prompt:"Commonly used data types DO NOT Include:",
+                                                                          // Question 1 with the answer options stored
+ {  prompt:"Commonly used data types DO NOT Include:",
     options: ["strings","booleans", "alerts", "numbers"],
     answer: "alerts"
 },
 
-Q2: {                                                                          // Question 2 with the answer options stored
+{                                                                          // Question 2 with the answer options stored
 
     prompt:"The condition in an if / else statement is enclosed within",
     options: ["quotes", "curlybrackets", "parenthesis", "squarebrackets"],
@@ -18,7 +18,7 @@ Q2: {                                                                          /
 
 },
 
-Q3: {                                                                          // Question 3 with the answer options stored
+{                                                                          // Question 3 with the answer options stored
 
     prompt:"Arrays in JavaScript can be used to store:",
     options: ["numbers and strings","other arrays","booleans","all of the above"],
@@ -26,7 +26,7 @@ Q3: {                                                                          /
 
 },
 
-Q4: {                                                                          // Question 4 with the answer options stored
+ {                                                                          // Question 4 with the answer options stored
 
     prompt:"Q4: String values must be enclosed within when being assigned to variables.",
     options: ["commas","curly brackets","quotes","parenthesis"],
@@ -34,7 +34,7 @@ Q4: {                                                                          /
 
 },
 
-Q5: {                                                                          // Question 5 with the answer options stored
+ {                                                                          // Question 5 with the answer options stored
 
     prompt:"Q5: A very useful tool used during development and debugging for printing content to the debugger is:",
     options: ["JavaScript","terminal/bash","for loop","console.log"],
@@ -42,7 +42,7 @@ Q5: {                                                                          /
 
 },
 
-}
+]
 
                                                                                 /*web API's variables from HTML elements*/ 
 
@@ -91,7 +91,9 @@ function quizStart() {
 
 function promptQuestion() {
 
-    var currentQuestion = questions[currentQuestionIndex]; // targeting index position from questions in the question object
+    var currentQuestion = Questions[currentQuestionIndex].prompt; // targeting index position from questions in the question object
+
+    var CurrentSelection
 
     var promptingQuestions = document.getElementById("questions");
 
@@ -99,15 +101,15 @@ function promptQuestion() {
 
     possibleAnswers.innerHTML = "";
 
-    currentQuestion.options.forEach(function (selection, i) {
+    currentQuestion.forEach(function (selection, i) {
 
             var selectAnswerBtn = document.createElement("button");
 
-            choiceBtn.setAttribute("value", selection);
+            selectAnswerBtn.setAttribute("value", selection);
 
             selectAnswerBtn.textContent = i + 1 + ". " + selection;
 
-            selectAnswerBtn.onclick = questionClick;
+            selectAnswerBtn.addEventListener("click",clickingAnswer);
 
             possibleAnswers.appendChild(selectAnswerBtn);
         }
@@ -173,7 +175,7 @@ function endingQuiz() {
 
     finalScoreEl.textContent = timePerQuestions; //
 
-    questionsEl.setAttribute( "class","hide"); //
+    QuizQuestions.setAttribute( "class","hide"); //
 }
  
 
@@ -187,7 +189,7 @@ function timerCounter() { // function
 
     mytimer.textContent = timePerQuestions; //
 
-    if (time <= 0) {   //
+    if (timePerQuestions <= 0) {   //
 
         endingQuiz();
     }
