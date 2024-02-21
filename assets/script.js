@@ -51,21 +51,21 @@ var QuizQuestions = document.querySelector("#questions"); //targeting questions 
 
 var mytimer = document.querySelector("#counter"); // targeting counter from HTML
 
-var possibleAnswers = document.querySelector("#answer-options");
+var possibleAnswers = document.querySelector("#answer-options"); //targeting answers from each question
 
-var submit = document.querySelector("#submit");
+var submit = document.querySelector("#submit"); //targeting submit button
 
-var startQuiz = document.querySelector("#start-button");
+var startQuiz = document.querySelector("#start-button"); // targeting start quiz button
 
-var student = document.querySelector("#student-initials");
+var student = document.querySelector("#student-initials"); // targeting input box at the end of quiz by putting the initials
 
-var feedbackMessage = document.querySelector("#feedback");
+var feedbackMessage = document.querySelector("#feedback"); // targeting feedback element from HTML
 
-var reStartBtn = document.querySelector("#restart");
+var reStartBtn = document.querySelector("#go-back");
 
 var currentQuestionIndex = 0; // index position of Questions object for futher access
 
-var timePerQuestions = Questions.length * 15;
+var timePerQuestions = Questions.length;
 
 var timerIntervalQuiz;
 
@@ -163,17 +163,17 @@ function clickingAnswer() {
 
 function endingQuiz() {
 
-    clearInterval(timerIntervalQuiz);
+    clearInterval(timerIntervalQuiz); // cancels the repeater time once it hits zero from our set interval function
 
-    var endScreenEl = document.getElementById( "quiz-end");
+    var endScreenEl = document.getElementById( "quiz-end"); //
 
-    endScreenEl.removeAttribute("class");
+    endScreenEl.removeAttribute("class"); //
 
-    var finalScoreEl = document.getElementById("score-final");
+    var finalScoreEl = document.getElementById("score-final"); //
 
-    finalScoreEl.textContent = timePerQuestions;
+    finalScoreEl.textContent = timePerQuestions; //
 
-    questionsEl.setAttribute( "class","hide");
+    questionsEl.setAttribute( "class","hide"); //
 }
  
 
@@ -196,3 +196,4 @@ function timerCounter() { // function
 
 /*function 6: storing highscores from quiz */
 
+startQuiz.addEventListener("click",quizStart);
