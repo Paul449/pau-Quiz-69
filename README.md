@@ -34,4 +34,4 @@ N/A
 
 # License
 
-[MIT License link:](https://github.com/Paul449/pau-Quiz-69/blob/main/LICENSE)
+(https://github.com/Paul449/pau-Quiz-69/blob/main/LICENSE)
